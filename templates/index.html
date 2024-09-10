@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="{{ 'mobile' if is_mobile else 'desktop' }} {{ 'android' if is_android else '' }} {{ 'ios' if is_ios else '' }}">
+<!-- 
+<body class="mobile android">
+<body class="mobile ios">        
+<body class="desktop"> -->
     <div class="container">
         <h1 id="head">Hello Flask</h1>
         <p>이것은 Flask로 만든 간단한 웹 페이지입니다.</p>
@@ -18,6 +22,8 @@
             {% else %}
             <p class="mobile-message">모바일 기기에서 접속하셨네요!</p>
             {% endif %}
+        {% else %}
+        <p class="mobile-message">PC에서 접속하셨네요!</p>
         {% endif %}
     </div>
 </body>
